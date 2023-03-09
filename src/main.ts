@@ -34,7 +34,7 @@ async function bootstrap() {
   app.setGlobalPrefix('api/v1');
 
   const documentBuilder = new DocumentBuilder()
-    .setTitle('API IGNUG')
+    .setTitle('API RRHH')
     .setDescription('App description')
     .setVersion('2')
     .addBearerAuth()

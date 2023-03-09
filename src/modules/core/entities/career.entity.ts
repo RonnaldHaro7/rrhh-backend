@@ -10,11 +10,6 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { CatalogueEntity, InstitutionEntity } from '@core/entities';
-import {
-  ModalityEntity,
-  PlanningEntity,
-  RequirementRequestEntity,
-} from '@uic/entities';
 
 @Entity('careers', { schema: 'core' })
 export class CareerEntity {
@@ -52,12 +47,6 @@ export class CareerEntity {
   // requirementRequests: RequirementRequestEntity[];
 
   //FK UIC
-  @OneToMany(() => PlanningEntity, (planning) => planning.career)
-  planning: PlanningEntity[];
-
-  @ManyToOne(() => InstitutionEntity, {
-    nullable: true,
-  })
   @JoinColumn({ name: 'institution_id' })
   institution: InstitutionEntity;
 

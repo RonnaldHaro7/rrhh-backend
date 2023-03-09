@@ -78,20 +78,20 @@
       "@uic/controllers": [
         "./src/modules/uic/controllers"
       ],
-      "@uic/dto": [
-        "./src/modules/uic/dto"
+      "@rrhh/dto": [
+        "./src/modules/rrhh/dto"
       ],
-      "@uic/entities": [
-        "./src/modules/uic/entities"
+      "@rrhh/entities": [
+        "./src/modules/rrhh/entities"
       ],
-      "@uic/modules": [
-        "./src/modules/uic"
+      "@rrhh/modules": [
+        "./src/modules/rrhh"
       ],
-      "@uic/providers": [
-        "./src/modules/uic/providers"
+      "@rrhh/providers": [
+        "./src/modules/rrhh/providers"
       ],
-      "@uic/services": [
-        "./src/modules/uic/services"
+      "@rrhh/services": [
+        "./src/modules/rrhh/services"
       ],
       "@config": [
         "./src/config"

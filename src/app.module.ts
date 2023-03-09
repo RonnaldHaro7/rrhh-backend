@@ -9,8 +9,8 @@ import { config } from '@config';
 import { AuthModule } from '@auth/modules';
 import { CoreModule } from '@core/modules';
 import { CommonModule } from '@common/modules';
-import { UicModule } from './modules/uic/uic.module';
 import { MemoryStoredFile, NestjsFormDataModule } from 'nestjs-form-data';
+import { RrhhModule } from './modules/rrhh';
 
 @Module({
   imports: [
@@ -35,7 +35,7 @@ import { MemoryStoredFile, NestjsFormDataModule } from 'nestjs-form-data';
     CommonModule,
     AuthModule,
     CoreModule,
-    UicModule,
+    RrhhModule,
   ],
   controllers: [AppController],
   providers: [AppService],

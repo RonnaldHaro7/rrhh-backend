@@ -18,20 +18,8 @@ export class RolesSeeder {
         name: 'Administrador',
       },
       {
-        code: 'teacher',
-        name: 'Docente',
-      },
-      {
-        code: 'coordinator_administrative',
-        name: 'Coordinador Administrativo',
-      },
-      {
-        code: 'coordinator_career',
-        name: 'Coordinador Carrera',
-      },
-      {
-        code: 'rector',
-        name: 'Rector',
+        code: 'humanResources',
+        name: 'Recuros Humanos',
       },
     );
 

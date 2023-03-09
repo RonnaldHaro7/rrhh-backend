@@ -1,9 +1,6 @@
 import { DataSource } from 'typeorm';
-import {
-  EventEntity,
-} from '@rrhh/entities';
-
 import { DataSourceEnum, RepositoryEnum } from '@shared/enums';
+import { EventEntity } from '../entities';
 
 export const rrhhProviders = [
   {

@@ -19,14 +19,13 @@ export class UsersSeeder {
     const users: CreateUserDto[] = [];
     const roles = (await this.rolesService.findAll()).data as RoleEntity[];
     const adminRole = roles.find((role) => role.code === RoleEnum.ADMIN);
-    const teacherRole = roles.find((role) => role.code === RoleEnum.TEACHER);
-    const coordinatorAdministrativeRole = roles.find(
-      (role) => role.code === RoleEnum.COORDINATOR_ADMINISTRATIVE,
-    );
-    const coordinatorCareerRole = roles.find(
-      (role) => role.code === RoleEnum.COORDINATOR_CAREER,
-    );
-    const rectorRole = roles.find((role) => role.code === RoleEnum.RECTOR);
+    const humanResourcesRole = roles.find((role) => role.code === RoleEnum.HUMAN_RESORCES);
+    // const coordinatorAdministrativeRole = roles.find(
+    //   (role) => role.code === RoleEnum.COORDINATOR_ADMINISTRATIVE,
+    // );
+    // const coordinatorCareerRole = roles.find(
+    //   (role) => role.code === RoleEnum.COORDINATOR_CAREER,
+    // );
 
     users.push(
       {
@@ -39,40 +38,13 @@ export class UsersSeeder {
         username: 'admin',
       },
       {
-        email: 'teacher@gmail.com',
+        email: 'humanResources@gmail.com',
         lastname: 'Perez',
-        name: 'Teacher',
+        name: 'Pepito',
         password: '12345678',
         passwordChanged: false,
-        roles: [teacherRole],
-        username: 'teacher',
-      },
-      {
-        email: 'coordinator_administrative@gmail.com',
-        lastname: 'Perez',
-        name: 'Coordinator Administrative',
-        password: '12345678',
-        passwordChanged: false,
-        roles: [coordinatorAdministrativeRole],
-        username: 'coordinator_administrative',
-      },
-      {
-        email: 'coordinator_career@gmail.com',
-        lastname: 'Perez',
-        name: 'Coordinator Career',
-        password: '12345678',
-        passwordChanged: false,
-        roles: [coordinatorCareerRole],
-        username: 'coordinator_career',
-      },
-      {
-        email: 'rector@gmail.com',
-        lastname: 'Perez',
-        name: 'Rector',
-        password: '12345678',
-        passwordChanged: false,
-        roles: [rectorRole],
-        username: 'rector',
+        roles: [humanResourcesRole],
+        username: 'humanResources',
       },
     );
 

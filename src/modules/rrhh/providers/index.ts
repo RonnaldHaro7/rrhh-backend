@@ -1,1 +1,1 @@
-export * from './uic.provider';
+export * from './rrhh.provider';

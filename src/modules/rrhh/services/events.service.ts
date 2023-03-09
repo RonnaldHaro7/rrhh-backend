@@ -5,7 +5,12 @@ import { ServiceResponseHttpModel } from '@shared/models';
 import { RepositoryEnum } from '@shared/enums';
 import { PaginationDto } from '@core/dto';
 import { EventEntity } from '../entities';
-import { CreateEventDto, FilterEventDto, ReadEventDto, UpdateEventDto } from '../dto';
+import {
+  CreateEventDto,
+  FilterEventDto,
+  ReadEventDto,
+  UpdateEventDto,
+} from '../dto';
 
 @Injectable()
 export class EventsService {
@@ -51,10 +56,7 @@ export class EventsService {
 
     //All
     const response = await this.repository.findAndCount({
-      relations: {
-        catalogue: true,
-        planning: true,
-      },
+      relations: {},
       order: { updatedAt: 'DESC' },
     });
 
@@ -69,30 +71,8 @@ export class EventsService {
     params?: FilterEventDto,
   ): Promise<ServiceResponseHttpModel> {
     const response = await this.repository.findAndCount({
-      where: [{ planning: { id: planningId } }],
-      relations: {
-        catalogue: true,
-        planning: true,
-      },
-      order: { updatedAt: 'DESC' },
-    });
-
-    return {
-      data: plainToInstance(ReadEventDto, response[0]),
-      pagination: { totalItems: response[1], limit: 10 },
-    };
-  }
-
-  async findByPlanningTimeline(
-    planningId: string,
-    params?: FilterEventDto,
-  ): Promise<ServiceResponseHttpModel> {
-    const response = await this.repository.findAndCount({
-      where: [{ planning: { id: planningId } }],
-      relations: {
-        catalogue: true,
-        planning: true,
-      },
+      //where:,
+      relations: {},
       order: { updatedAt: 'DESC' },
     });
 
@@ -105,7 +85,7 @@ export class EventsService {
   async findOne(id: string): Promise<ServiceResponseHttpModel> {
     const event = await this.repository.findOne({
       where: { id },
-      relations: { catalogue: true, planning: true },
+      //relations: { catalogue: true, planning: true },
     });
 
     if (!event) {
@@ -159,14 +139,11 @@ export class EventsService {
       search = search.trim();
       page = 0;
       where = [];
-      where.push({ catalogue: ILike(`%${search}%`) });
+      //where.push({ catalogue: ILike(`%${search}%`) });
     }
     const response = await this.repository.findAndCount({
       where,
-      relations: {
-        catalogue: true,
-        planning: true,
-      },
+      relations: {},
       take: limit,
       skip: PaginationDto.getOffset(limit, page),
       order: {

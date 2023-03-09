@@ -81,35 +81,6 @@ export class EventsController {
     };
   }
 
-
-  @ApiOperation({ summary: 'Find by planning' })
-  @Get('plannings/:id')
-  @HttpCode(HttpStatus.OK)
-  async findByPlanning(@Param('id', ParseUUIDPipe) id: string,@Query() params: FilterEventDto): Promise<ResponseHttpModel> {
-    const serviceResponse = await this.eventsService.findByPlanning(id,params);
-
-    return {
-      data: serviceResponse.data,
-      pagination: serviceResponse.pagination,
-      message: `eventsByplanning`,
-      title: 'Success',
-    };
-  }  
-
-  @ApiOperation({ summary: 'Find by planning TimeLine' })
-  @Get('timeline/:id')
-  @HttpCode(HttpStatus.OK)
-  async findByPlanninTimeline(@Param('id', ParseUUIDPipe) id: string,@Query() params: FilterEventDto): Promise<ResponseHttpModel> {
-    const serviceResponse = await this.eventsService.findByPlanningTimeline(id,params);
-
-    return {
-      data: serviceResponse.data,
-      pagination: serviceResponse.pagination,
-      message: `eventsByplanning`,
-      title: 'Success',
-    };
-  }
-    
   @ApiOperation({ summary: 'Find One' })
   @Auth()
   @Get(':id')
