@@ -23,7 +23,7 @@ export class FilterCareerDto extends PaginationDto {
   readonly name: string;
 
   @IsNumber({}, { message: 'El campo resolutionNumber debe ser un numero' })
-  readonly resolutionNumber: number;
+  readonly resolutionNumber: string;
 
   @IsString({ message: 'El campo shortName debe ser un string' })
   @IsOptional()

@@ -105,7 +105,7 @@ export class CareerEntity {
   })
   name: string;
 
-  @Column('float', {
+  @Column('varchar', {
     comment: 'Numero de resolucion de la carrera',
     name: 'resolution_number',
   })
